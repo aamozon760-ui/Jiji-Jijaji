@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Anniversary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    text-align:center;
+    padding:20px;
+    overflow-x:hidden;
+}
+
+h1{
+    font-family:'Great Vibes',cursive;
+    font-size:52px;
+    color:white;
+    text-shadow:0 0 15px rgba(255,255,255,0.8);
+}
+
+/* floating music button */
+.music{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:white;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    animation:floatBtn 2s infinite;
+}
+@keyframes floatBtn{
+0%,100%{transform:translate(-50%,0)}
+50%{transform:translate(-50%,-8px)}
+}
+
+/* zigzag layout */
+.section{
+    width:100%;
+    max-width:900px;
+    margin:40px auto;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+.section:nth-child(even){ flex-direction:row-reverse; }
+
+/* polaroid photo */
+.photo{
+    width:45%;
+    background:white;
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+.photo img{ width:100%; border-radius:8px; }
+
+/* note bubble */
+.note{
+    width:55%;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* ending card */
+.closing{
+    background:white;
+    padding:25px;
+    border-radius:25px;
+    font-size:22px;
+    margin:40px auto;
+    max-width:500px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* hearts */
+.hearts{position:fixed;bottom:-10px;width:100%;pointer-events:none;}
+.heart{position:absolute;color:#ff4d6d;animation:floatUp 6s linear infinite;}
+@keyframes floatUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-110vh);opacity:0}}
+
+/* mobile */
+@media(max-width:700px){
+.section{flex-direction:column !important;}
+.photo,.note{width:90%;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts"></div>
+
+<audio id="bgmusic" loop>
+  <source src="song.mp3" type="audio/mp3">
+</audio>
+
+<h1>Happy 37th Anniversary 💖</h1>
+<div class="music">🔊 Tap to play music</div>
+
+<!-- Section 1 -->
+<div class="section">
+  <div class="photo">
+    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM%20(1).jpeg">
+  </div>
+  <div class="note">
+जब भी घर में खुशियाँ सजी हैं,<br>
+उसमें दीदी आपका ही हाथ रहा है।<br>
+विनीता दीदी ने प्यार से जोड़े रिश्ते,<br>
+कमल जीजाजी ने हर पल साथ निभाया है।
+  </div>
+</div>
+
+<!-- Section 2 -->
+<div class="section">
+  <div class="photo">
+    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM.jpeg">
+  </div>
+  <div class="note">
+आप दोनों का ये साथ सिर्फ शादी नहीं,<br>
+हम सबके दिलों की मुस्कान है।<br>
+37 साल का ये खूबसूरत सफर<br>
+हमारे परिवार की पहचान है।
+  </div>
+</div>
+
+<!-- Section 3 -->
+<div class="section">
+  <div class="photo">
+    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.17%20PM.jpeg">
+  </div>
+  <div class="note">
+दीदी की मुस्कान, जीजाजी का साथ,<br>
+यही है खुशियों की असली बात।<br>
+37 सालों का ये प्यार भरा सफर,<br>
+रहे यूँ ही उम्रभर दिन और रात ❤️
+  </div>
+</div>
+
+<!-- Section 4 -->
+<div class="section">
+  <div class="photo">
+    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM.jpeg">
+  </div>
+  <div class="note">
+खुश रहें आप हमेशा यूँ ही,<br>
+स्वस्थ, हँसते-खेलते जीवन बिताएँ।<br>
+और ऐसे ही अपने प्यार व अनुभव से<br>
+हम सबको जीवन का मार्ग दिखाएँ।
+  </div>
+</div>
+
+<div class="closing">
+विनीता दीदी ❤️ कमल जीजाजी <br>
+आपको 37वीं सालगिरह की ढेरों शुभकामनाएँ 💐
+</div>
+
+<script>
+document.body.addEventListener("click",()=>{document.getElementById("bgmusic").play();});
+setInterval(()=>{const h=document.createElement("div");h.className="heart";h.innerHTML="❤";h.style.left=Math.random()*100+"vw";h.style.fontSize=(Math.random()*20+10)+"px";document.querySelector(".hearts").appendChild(h);setTimeout(()=>{h.remove();},6000);},500);
+</script>
+
+</body>
+</html>
