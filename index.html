@@ -17,55 +17,70 @@ body{
     padding:20px;
     text-align:center;
 }
+
+/* light overlay */
 body::before{
-    content:"";position:fixed;width:100%;height:100%;
-    background:rgba(0,0,0,0.35);top:0;left:0;z-index:-1;
+    content:"";
+    position:fixed;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.25);
+    top:0;left:0;z-index:-1;
 }
 
-/* Floating title */
+/* title */
 h1{
     font-family:'Great Vibes',cursive;
-    font-size:55px;color:white;
+    font-size:55px;
+    color:white;
     animation:floatTitle 3s ease-in-out infinite;
 }
 @keyframes floatTitle{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-/* Scroll hint */
-.scroll{
-position:fixed;top:80px;left:50%;transform:translateX(-50%);
-background:white;padding:8px 16px;border-radius:20px;font-weight:bold;
-animation:bounce 1.5s infinite;}
+/* scroll + music buttons */
+.scroll,.music{
+position:fixed;left:50%;transform:translateX(-50%);
+background:white;padding:10px 18px;border-radius:25px;font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.scroll{top:80px;animation:bounce 1.5s infinite;}
+.music{bottom:20px;animation:floatBtn 2s infinite;}
 @keyframes bounce{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
-
-/* Music button */
-.music{
-position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
-background:white;padding:12px 20px;border-radius:30px;font-weight:bold;
-animation:floatBtn 2s infinite;}
 @keyframes floatBtn{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,-8px)}}
 
 /* scrapbook layout */
 .section{display:flex;align-items:center;gap:20px;max-width:900px;margin:40px auto;}
 .section:nth-child(even){flex-direction:row-reverse;}
-.photo{width:45%;background:white;padding:10px;border-radius:10px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
-.photo img{width:100%;border-radius:8px;}
 
-/* colourful notes */
-.note{width:55%;padding:20px;border-radius:20px;font-size:20px;line-height:1.8;box-shadow:0 10px 25px rgba(0,0,0,0.25);}
-.section:nth-child(1) .note{background:#ffe4ec;}
-.section:nth-child(2) .note{background:#e4fff2;}
-.section:nth-child(3) .note{background:#e6f0ff;}
-.section:nth-child(4) .note{background:#fff3cd;}
+.photo{width:45%;background:white;padding:10px;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.3);}
+.photo img{width:100%;border-radius:10px;}
 
-/* Last image */
-.last{position:relative;max-width:500px;margin:40px auto;}
-.last img{width:100%;border-radius:20px;}
-.lastText{
-position:absolute;bottom:25px;left:0;right:0;color:white;
-font-size:22px;font-weight:bold;text-shadow:0 0 10px black;
+/* COLORFUL NOTE CARDS */
+.note{
+    width:55%;
+    padding:22px;
+    border-radius:22px;
+    font-size:20px;
+    line-height:1.9;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+.note1{background:#ffe4ec;}
+.note2{background:#e4fff2;}
+.note3{background:#e6f0ff;}
+.note4{background:#fff3cd;}
+
+/* ending card */
+.finalWish{
+    background:linear-gradient(45deg,#ffdde1,#fad0c4,#ffd166);
+    padding:25px;
+    border-radius:25px;
+    font-size:24px;
+    font-weight:bold;
+    margin:25px auto;
+    max-width:500px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* floating hearts */
+/* hearts */
 .hearts{position:fixed;bottom:-10px;width:100%;pointer-events:none;}
 .heart{position:absolute;color:#ff4d6d;animation:floatUp 6s linear infinite;}
 @keyframes floatUp{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-110vh);opacity:0}}
@@ -89,10 +104,9 @@ font-size:22px;font-weight:bold;text-shadow:0 0 10px black;
 <div class="scroll">⬇ Scroll Down ⬇</div>
 <div class="music">🔊 Tap to play music</div>
 
-<!-- 1 -->
 <div class="section">
 <div class="photo"><img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM.jpeg"></div>
-<div class="note">
+<div class="note note1">
 जब भी घर में खुशियाँ सजी हैं,<br>
 उसमें दीदी आपका ही हाथ रहा है।<br>
 विनीता दीदी ने प्यार से जोड़े रिश्ते,<br>
@@ -100,9 +114,9 @@ font-size:22px;font-weight:bold;text-shadow:0 0 10px black;
 </div>
 </div>
 
-<!-- 2 -->
 <div class="section">
-<div class="photo"><img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM%20(1).jpeg"></div><div class="note">
+<div class="photo"><img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM%20(1).jpeg"></div>
+<div class="note note2">
 आप दोनों का ये साथ सिर्फ शादी नहीं,<br>
 हम सबके दिलों की मुस्कान है।<br>
 37 साल का ये खूबसूरत सफर<br>
@@ -110,10 +124,9 @@ font-size:22px;font-weight:bold;text-shadow:0 0 10px black;
 </div>
 </div>
 
-<!-- 3 -->
 <div class="section">
 <div class="photo"><img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.17%20PM.jpeg"></div>
-<div class="note">
+<div class="note note3">
 दीदी की मुस्कान, जीजाजी का साथ,<br>
 यही है खुशियों की असली बात।<br>
 37 सालों का ये प्यार भरा सफर,<br>
@@ -121,10 +134,9 @@ font-size:22px;font-weight:bold;text-shadow:0 0 10px black;
 </div>
 </div>
 
-<!-- 4 -->
 <div class="section">
 <div class="photo"><img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM.jpeg"></div>
-<div class="note">
+<div class="note note4">
 खुश रहें आप हमेशा यूँ ही,<br>
 स्वस्थ, हँसते-खेलते जीवन बिताएँ।<br>
 और ऐसे ही अपने प्यार व अनुभव से<br>
@@ -132,13 +144,12 @@ font-size:22px;font-weight:bold;text-shadow:0 0 10px black;
 </div>
 </div>
 
-<!-- ending image -->
-<div class="last">
-<img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM%20(1).jpeg">
-<div class="lastText">
-विनीता दीदी ❤️ कमल जीजाजी<br>
+<img style="max-width:450px;width:90%;border-radius:20px;margin-top:20px"
+src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM%20(1).jpeg">
+
+<div class="finalWish">
+विनीता दीदी ❤️ कमल जीजाजी <br>
 आपको 37वीं सालगिरह की ढेरों शुभकामनाएँ 💐
-</div>
 </div>
 
 <script>
