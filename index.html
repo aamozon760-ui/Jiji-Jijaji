@@ -123,9 +123,46 @@ src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%2
 </div>
 
 <script>
-document.body.addEventListener("click",()=>{document.getElementById("bgmusic").play();});
-setInterval(()=>{const h=document.createElement("div");h.className="heart";h.innerHTML="❤";h.style.left=Math.random()*100+"vw";h.style.fontSize=(Math.random()*20+10)+"px";document.querySelector(".hearts").appendChild(h);setTimeout(()=>{h.remove();},6000);},500);
+
+// 🎵 Play music on first tap (mobile safe)
+document.body.addEventListener("click", function() {
+  const music = document.getElementById("bgmusic");
+  music.play().catch(()=>{});
+}, { once:true });
+
+
+// ⬇️ Scroll down button click → smooth scroll
+const scrollBtn = document.querySelector(".scroll");
+
+scrollBtn.addEventListener("click", function(){
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth"
+    });
+});
+
+
+// 👇 Hide scroll button after user scrolls
+window.addEventListener("scroll", function(){
+    if(window.scrollY > 50){
+        scrollBtn.style.display = "none";
+    }
+});
+
+
+// ❤️ floating hearts
+setInterval(()=>{
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤";
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(Math.random()*20+10)+"px";
+  document.querySelector(".hearts").appendChild(h);
+  setTimeout(()=>{h.remove();},6000);
+},500);
+
 </script>
+
 
 </body>
 </html>
