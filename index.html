@@ -5,55 +5,45 @@
 <title>Wedding Anniversary</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
     margin:0;
-    font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    text-align:center;
+    font-family:'Noto Sans Devanagari', sans-serif;
+    background-image:url("https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%208.00.05%20PM.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
     padding:20px;
-    overflow-x:hidden;
+    text-align:center;
+}
+
+/* overlay */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;height:100%;
+    background:rgba(0,0,0,0.35);
+    top:0;left:0;z-index:-1;
 }
 
 h1{
-    font-family:'Great Vibes',cursive;
+    font-family:'Great Vibes', cursive;
     font-size:52px;
     color:white;
-    text-shadow:0 0 15px rgba(255,255,255,0.8);
 }
 
-/* floating music button */
-.music{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:white;
-    padding:12px 20px;
-    border-radius:30px;
-    font-weight:bold;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
-    animation:floatBtn 2s infinite;
-}
-@keyframes floatBtn{
-0%,100%{transform:translate(-50%,0)}
-50%{transform:translate(-50%,-8px)}
-}
-
-/* zigzag layout */
+/* zigzag scrapbook layout */
 .section{
-    width:100%;
-    max-width:900px;
-    margin:40px auto;
     display:flex;
     align-items:center;
     gap:20px;
+    max-width:900px;
+    margin:40px auto;
 }
-.section:nth-child(even){ flex-direction:row-reverse; }
+.section:nth-child(even){flex-direction:row-reverse;}
 
-/* polaroid photo */
 .photo{
     width:45%;
     background:white;
@@ -61,28 +51,33 @@ h1{
     border-radius:10px;
     box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
-.photo img{ width:100%; border-radius:8px; }
+.photo img{width:100%;border-radius:8px;}
 
-/* note bubble */
 .note{
     width:55%;
     background:white;
     padding:20px;
     border-radius:20px;
+    font-size:20px;
+    line-height:1.8;
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
-    font-size:18px;
-    line-height:1.7;
 }
 
-/* ending card */
-.closing{
-    background:white;
-    padding:25px;
-    border-radius:25px;
-    font-size:22px;
-    margin:40px auto;
+/* last image overlay */
+.last{
+    position:relative;
     max-width:500px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    margin:40px auto;
+}
+.last img{width:100%;border-radius:20px;}
+.lastText{
+    position:absolute;
+    bottom:10px;
+    left:0;right:0;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    text-shadow:0 0 10px black;
 }
 
 /* hearts */
@@ -102,72 +97,66 @@ h1{
 
 <div class="hearts"></div>
 
-<audio id="bgmusic" loop>
-  <source src="song.mp3" type="audio/mp3">
-</audio>
-
 <h1>Happy 37th Anniversary 💖</h1>
-<div class="music">🔊 Tap to play music</div>
 
-<!-- Section 1 -->
 <div class="section">
-  <div class="photo">
-    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM%20(1).jpeg">
-  </div>
-  <div class="note">
+<div class="photo">
+<img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM%20(1).jpeg">
+</div>
+<div class="note">
 जब भी घर में खुशियाँ सजी हैं,<br>
 उसमें दीदी आपका ही हाथ रहा है।<br>
 विनीता दीदी ने प्यार से जोड़े रिश्ते,<br>
 कमल जीजाजी ने हर पल साथ निभाया है।
-  </div>
+</div>
 </div>
 
-<!-- Section 2 -->
 <div class="section">
-  <div class="photo">
-    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM.jpeg">
-  </div>
-  <div class="note">
+<div class="photo">
+<img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.16%20PM.jpeg">
+</div>
+<div class="note">
 आप दोनों का ये साथ सिर्फ शादी नहीं,<br>
 हम सबके दिलों की मुस्कान है।<br>
 37 साल का ये खूबसूरत सफर<br>
 हमारे परिवार की पहचान है।
-  </div>
+</div>
 </div>
 
-<!-- Section 3 -->
 <div class="section">
-  <div class="photo">
-    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.17%20PM.jpeg">
-  </div>
-  <div class="note">
+<div class="photo">
+<img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.10.17%20PM.jpeg">
+</div>
+<div class="note">
 दीदी की मुस्कान, जीजाजी का साथ,<br>
 यही है खुशियों की असली बात।<br>
 37 सालों का ये प्यार भरा सफर,<br>
 रहे यूँ ही उम्रभर दिन और रात ❤️
-  </div>
+</div>
 </div>
 
-<!-- Section 4 -->
 <div class="section">
-  <div class="photo">
-    <img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM.jpeg">
-  </div>
-  <div class="note">
+<div class="photo">
+<img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM.jpeg">
+</div>
+<div class="note">
 खुश रहें आप हमेशा यूँ ही,<br>
 स्वस्थ, हँसते-खेलते जीवन बिताएँ।<br>
 और ऐसे ही अपने प्यार व अनुभव से<br>
 हम सबको जीवन का मार्ग दिखाएँ।
-  </div>
+</div>
 </div>
 
-<div class="closing">
-विनीता दीदी ❤️ कमल जीजाजी <br>
+<!-- LAST IMAGE -->
+<div class="last">
+<img src="https://raw.githubusercontent.com/aamozon760-ui/Jiji-Jijaji/main/WhatsApp%20Image%202026-02-18%20at%207.15.06%20PM%20(1).jpeg">
+<div class="lastText">
+विनीता दीदी ❤️ कमल जीजाजी<br>
 आपको 37वीं सालगिरह की ढेरों शुभकामनाएँ 💐
+</div>
 </div>
 
 <script>
-document.body.addEventListener("click",()=>{document.getElementById("bgmusic").play();});
 setInterval(()=>{const h=document.createElement("div");h.className="heart";h.innerHTML="❤";h.style.left=Math.random()*100+"vw";h.style.fontSize=(Math.random()*20+10)+"px";document.querySelector(".hearts").appendChild(h);setTimeout(()=>{h.remove();},6000);},500);
 </script>
 
